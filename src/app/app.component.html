@@ -1,0 +1,14 @@
+<div class="todo-container">
+  @for (todo of todoData; track todo.id; let first = $first, last = $last, odd = $odd, even = $even){
+    <app-todo
+      [todoData]="todo"
+      [isFirst]="first"
+      [isLast]="last"
+      [isEven]="even"
+      [isOdd]="odd"
+      (onClickIcon)="getTodoInfo($event)">
+    </app-todo>
+  }
+</div>
+
+<button (click)="orderData()">Ordenar</button>
